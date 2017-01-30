@@ -1,0 +1,388 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8' name="viewport" content="width=device-width; initial-scale=1.0")
+    link(rel="stylesheet", href="css/main.min.css" media)
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%22")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700%22")
+    title BINO
+  body
+
+    mixin add-features-item-active(imgName, className, header, text)
+      -var src = "images/" + imgName + ".png"
+      .features-item.active
+        .features-item-logo
+          img(src=src)(class=className)
+        .header
+          a(href="#")=header
+        .hr-line
+        .info=text
+
+    mixin add-features-item(imgName, className, header, text)
+      -var src = "images/" + imgName + ".png"
+      .features-item
+        .features-item-logo
+          img(src=src)(class=className)
+        .header
+          a(href="#")=header
+        .hr-line
+        .info=text
+
+    mixin add-info-item(imgName, header, text)
+      -var src = "images/" + imgName + ".png"
+      .info-item
+        .info-item-header=header
+        .info-item-text=text
+        img(src=src).info-item-img
+
+    mixin add-resent-photos-item(imgName)
+      -var src = "images/" + imgName + ".png"
+      .recent-photos-item
+        img(src=src)
+        .resent-overlay
+          .resent-subheader art / t-shirt
+          .resent-header T-SHIRT DESIGN
+          .line
+
+
+    mixin add-status-item(imgName, count, text)
+      -var src = "images/" + imgName + ".png"
+      .status-item
+        img(src=src).status-item-img
+        .status-item-count=count
+        .status-item-text=text
+
+    mixin add-pricing-box(header, firstText, secondText, thirdText, forthText, circleHeader, circleSubheader, active)
+      .pricing-box(class=active)
+        .pricing-box-top
+          .header=header
+          .pricing-circle-gray
+            .pricing-circle-white
+              .pricing-circle-header=circleHeader
+              .pricing-circle-subheader=circleSubheader
+        .pricing-box-bottom
+          .text-item=firstText
+          .text-item=secondText
+          .text-item=thirdText
+          .text-item=forthText
+          .pricing-box-button
+            a(href="#") CHOOSE PLAN
+
+    mixin add-company-item(imgName, active)
+      -var src = "images/" + imgName + ".png"
+      .company-item(class=active)
+        img(src=src).company-item-img
+
+    mixin add-blog-item-img(imgName)
+      -var src = "images/" + imgName + ".png"
+      .blog-item-img
+        img(src=src)
+
+    mixin add-blog-item-text(className)
+      div(class=className)
+        .top-text art / t-shirt
+        .header T-SHIRT DESIGN
+        .line
+        .info Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the indu Stry's standard dummy text ever since the 1500s, an unknown printer took a galley of type a scrambled it to make a type specimen book.
+        .read-more
+          a(href="#") Read More &raquo;
+
+
+    header
+      .wrapper
+        nav
+          .toggle-menu
+            div
+            div
+            div
+          .logo
+            img(src="images/logo.png")
+          ul.menu
+            li.active
+             a(href="#") home
+            li
+              a(href="#") about us
+            li
+              a(href="#") portfolio
+            li
+              a(href="#") pricing
+            li
+              a(href="#") team
+            li
+              a(href="#") blog
+            li
+              a(href="#") contact
+        .info
+          .subheader Our Clients Are Our First Priority
+          .header WELCOME TO BINO
+          .red-circle
+          .header-info Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          .buttons
+            .red-button
+              a(href="#") GET STARTED NOW
+            .transparent-button
+              a(href="#") LEARN MORE
+      .left-triangle
+      .right-triangle
+      img(src="images/anchor.png").bottom-icon
+      .right-button
+        img(src="images/fa-left.png")
+      .left-button.not-active 
+        img(src="images/fa-left.png")
+
+    .features
+      .wrapper
+        +add-features-item-active("glasses", "features-item-img-glasses", "SLEEK DESIGN",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry.")
+        +add-features-item("head", "features-item-img-head", "CLEAN CODEN",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry.")
+        +add-features-item("bulb", "features-item-img-bulb", "CREATIVE IDEAS",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry.")
+        +add-features-item("mail", "features-item-img-mail", "FREE SUPPORT",
+        "Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry.")
+
+    .history
+      .wrapper
+        .history-image
+          img(src="images/monitor.png")
+        .history-info
+          .history-info-header OUR HISTORY
+          .history-info-text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip sum has been the industry's standard dummy text ever since the 1500s, when an unk- nown printer took a galley of type and scrambled it to make a type specimen book.
+          .history-info-text It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          .history-info-button
+            a(href="#") BROWSE OUR WORK
+
+    .services
+      .vr-lines
+        .vr-lines-item
+        .vr-lines-item
+        .vr-lines-item
+      .left-side
+        .wrapper
+          .header OUR SERVICES
+          +add-info-item("icon-monitor", "WEB DESIGN",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ip sum has been the industry's standard dummy text ever.")
+          +add-info-item("icon-copy", "PRINT DESIGN",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ip sum has been the industry's standard dummy text ever.")
+          +add-info-item("icon-photo", "PHOTOGRAPHY",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ip sum has been the industry's standard dummy text ever.")
+      .right-side
+
+    .resent-works
+      .wrapper
+        .header RECENT WORKS
+        .subheader It has survived not only five centuries, but also the leap scrambled it to make a type.
+        .red-circle
+        nav
+          ul
+            li.active
+              a(href="#") ALL
+            li /
+            li
+              a(href="#") PRINT DESIGN
+            li /
+            li
+              a(href="#") ANIMATION
+            li /
+            li
+              a(href="#") ART
+            li /
+            li
+              a(href="#") WEB DESIGN
+            li /
+            li
+              a(href="#") PHOTOGRAPHY
+            li /
+            li
+              a(href="#") VIDEO
+      .recent-photos
+        +add-resent-photos-item("recent-1")
+        +add-resent-photos-item("recent-2")
+        +add-resent-photos-item("recent-3")
+        +add-resent-photos-item("recent-4")
+        +add-resent-photos-item("recent-5")
+        +add-resent-photos-item("recent-6")
+        +add-resent-photos-item("recent-7")
+        +add-resent-photos-item("recent-8")
+        //- .recent-photos-item
+        //-   img(src="images/recent-1.png")
+        //- .recent-photos-item
+        //-   img(src="images/recent-2.png")
+        //- .recent-photos-item
+        //-   img(src="images/recent-3.png")
+        //- .recent-photos-item
+        //-   img(src="images/recent-4.png")
+        //- .recent-photos-item
+        //-   img(src="images/recent-5.png")
+        //- .recent-photos-item
+        //-   img(src="images/recent-6.png")
+        //- .recent-photos-item
+        //-   img(src="images/recent-7.png")
+        //- .recent-photos-item
+        //-   img(src="images/recent-8.png")
+
+    .case-study
+      .header CASE STUDY
+      .subheader A brief story about how this process works, keep an eye till the end.
+      .red-circle
+      .wrapper
+        .right-image
+          img(src="images/room.png")
+        .left-box
+          .red-romb
+            img(src="images/bulb-white.png")
+          .header ACCUMULATE CREATIVE IDEAS
+          .hr-line
+          .info Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry. Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the industry Printing and typelorem Ipsum has been the setting let.
+          .left-box-button
+            a(href="#") read more
+          .tabs
+            .red-circle
+            .gray-circle
+            .gray-circle
+
+    .status
+      .wrapper
+        +add-status-item("icon-head-white", "3891", "User Favourites")
+        +add-status-item("icon-pointer-white", "281K", "Posts Last 24 Hours")
+        +add-status-item("icon-ok-white", "618", "Total Posts")
+        +add-status-item("icon-star-white", "178", "Campaigns")
+        +add-status-item("icon-book-white", "285", "Amazing Features")
+
+    .pricing
+      .header OUR PRICING
+      .subheader A 30 days free trial for all. A brief story about how this process works, keep an eye till the end.
+      .red-circle
+      .wrapper
+        +add-pricing-box("STARTER", "Competition Analysis Methods", "All Ranked URLs",
+        "International Support System", "Social Media Tracking", "$19", "per month")
+        +add-pricing-box("PREMIUM", "Competition Analysis Methods", "All Ranked URLs",
+        "International Support System", "Social Media Tracking", "$39", "per month", "active")
+        +add-pricing-box("BUSINESS", "Competition Analysis Methods", "All Ranked URLs",
+        "International Support System", "Social Media Tracking", "$99", "per month")
+
+    .team
+      .header OUR TEAM
+      .subheader Meet the craziest team. Share your thoughts with them.
+      .red-circle
+      .team-peoples
+        ul
+          li.people-1
+            img(src="images/people-1.png")
+            .people-info
+              .line
+              .people-name Kazi Erfan
+              .people-position UI/UX Designer
+          li.people-2
+            img(src="images/people-2.png")
+            .people-info
+              .line
+              .people-name Kazi Erfan
+              .people-position UI/UX Designer
+          li.people-3
+            img(src="images/people-3.png")
+            .people-info
+              .line
+              .people-name Kazi Erfan
+              .people-position UI/UX Designer
+          li.people-4
+            img(src="images/people-4.png")
+            .people-info
+              .line
+              .people-name Kazi Erfan
+              .people-position UI/UX Designer
+          li.people-5
+            img(src="images/people-5.png")
+            .people-info
+              .line
+              .people-name Kazi Erfan
+              .people-position UI/UX Designer
+
+    .company
+      .header Great Integrations with Others
+      .subheader Suspendisse sed eros mollis, tincidunt felis eget, interdum erat. <br> Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna suscipit, dictum quam nec.
+      .red-circle
+      .wrapper
+        +add-company-item("company-1")
+        +add-company-item("company-2")
+        +add-company-item("company-3")
+        +add-company-item("company-4")
+        +add-company-item("company-5")
+        +add-company-item("company-6")
+        +add-company-item("company-7", "active")
+        +add-company-item("company-8")
+        +add-company-item("company-9")
+        +add-company-item("company-10")
+
+    .blog
+      .header OUR BLOG
+      .subheader Suspendisse sed eros mollis, tincidunt felis eget, interdum eratullam sit amet odio.
+      .red-circle
+      .wrapper
+        .blog-column
+          .blog-item
+            +add-blog-item-img("blog-1")
+            +add-blog-item-text("blog-item-text-right")
+          .blog-item.reverse
+            +add-blog-item-text("blog-item-text-left")
+            +add-blog-item-img("blog-3")
+        .blog-column
+          .blog-item
+            +add-blog-item-img("blog-2")
+            +add-blog-item-text(" blog-item-text-right")
+          .blog-item.reverse
+            +add-blog-item-text("blog-item-text-left")
+            +add-blog-item-img("blog-4")
+
+    .keep
+      .header kEEP IN TOUCH
+      .subheader Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna suscipit, dictum quam nec.
+      .red-circle
+      .wrapper
+        .info
+          .info-item
+            .info-item-header OUR ADDRESS
+            .info-item-text House #13, Streat road, Sydney 2310 Australia
+          .info-item
+            .info-item-header CALL US
+            .info-item-text + 880 168 109 1425
+            .info-item-text + 0216809142
+          .info-item
+            .info-item-header EMAIL US
+            .info-item-text contactus@email.com
+        form
+          input(type="text" placeholder="Name")
+          input(type="text" placeholder="Email")
+          input(type="text" placeholder="Subject")
+          textarea(placeholder="Message")
+          .keep-button
+            a(href="#") SEND MESSAGE
+
+    .start
+      .start-header Let's Get Started Now. It's FREE!
+      .start-info 30 day free trial. Free plan allows up to 2 projects. Pay if you need more. Cancel anytime. No catches.
+      .start-button
+        a(href="#") start free trial
+
+    footer
+      .wrapper
+        .social
+          a(href="#"): img(src="images/facebook.png").social-icon
+          a(href="#"): img(src="images/twitter.png").social-icon
+          a(href="#"): img(src="images/rss.png").social-icon
+          a(href="#"): img(src="images/google-plus.png").social-icon
+          a(href="#"): img(src="images/linkedin.png").social-icon
+          a(href="#"): img(src="images/skype.png").social-icon
+          a(href="#"): img(src="images/vimeo.png").social-icon
+          a(href="#"): img(src="images/tumblr.png").social-icon
+        .copyright Kazi Erfan &copy All Rights Reserved
+
+    a(href="#"): img(src="images/up-arrow.png").move-up
+
+    .overlay-box
+
+  script(src="/js/jquery-2.1.1.min.js")
+  script(src="/js/jquery.custom-scrollbar.min.js")
+  script(src="/js/jquery.vide.min.js")
+  script(src="/js/jquery.bxslider.min.js")
+  script(src="/js/site.js")

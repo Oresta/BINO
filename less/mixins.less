@@ -1,0 +1,68 @@
+.circle(@size, @margin, @color) {
+  width: @size;
+  height: @size;
+  background: @color;
+  border-radius: 50%;
+  margin: @margin auto;
+}
+
+.button(@width, @height, @font-size, @border-color, @background) {
+  width: @width;
+  height: @height;
+  box-sizing: border-box;
+  border: 1px solid @border-color;
+  border-radius: 3px;
+  background: @background;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  font-size: @font-size;
+  font-weight: bold;
+  line-height: @height;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.features-item-img(@width) {
+  width: @width;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transform: none;
+}
+
+.header-template(@color) {
+  font-family: 'Source Sans Pro';
+  text-align: center;
+
+  .header {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 36px;
+    color: @color;
+    text-transform: uppercase;
+  }
+
+  .subheader {
+    font-size: 14px;
+    line-height: 29px;
+    color: #999;
+    margin: 20px
+  }
+
+  .red-circle {
+    .circle(7px, 10px, @red);
+  }
+}
